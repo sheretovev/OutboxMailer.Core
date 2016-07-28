@@ -1,0 +1,1 @@
+# OutboxMailer.Core
