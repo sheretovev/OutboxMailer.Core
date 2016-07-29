@@ -1,5 +1,5 @@
---temp-output:c:\users\esheretov\documents\visual studio 2015\Projects\Iquality.Shared.OutboxMailer.Core\src\Iquality.Shared.Data\obj\Debug\netcoreapp1.0\
---out:c:\users\esheretov\documents\visual studio 2015\Projects\Iquality.Shared.OutboxMailer.Core\src\Iquality.Shared.Data\bin\Debug\netcoreapp1.0\Iquality.Shared.Data.dll
+--temp-output:C:\Users\esheretov\Dropbox\JOB\Learning\aspnet5\GitHub\OutboxMailer.Core\src\Iquality.Shared.Data\obj\Debug\netcoreapp1.0\
+--out:C:\Users\esheretov\Dropbox\JOB\Learning\aspnet5\GitHub\OutboxMailer.Core\src\Iquality.Shared.Data\bin\Debug\netcoreapp1.0\Iquality.Shared.Data.dll
 --define:DEBUG
 --define:TRACE
 --define:NETCOREAPP1_0
@@ -134,6 +134,6 @@
 --reference:C:\Users\esheretov\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll
 --reference:C:\Users\esheretov\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\esheretov\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
-c:\users\esheretov\documents\visual studio 2015\Projects\Iquality.Shared.OutboxMailer.Core\src\Iquality.Shared.Data\Class1.cs
-c:\users\esheretov\documents\visual studio 2015\Projects\Iquality.Shared.OutboxMailer.Core\src\Iquality.Shared.Data\MessagingContext.cs
-c:\users\esheretov\documents\visual studio 2015\Projects\Iquality.Shared.OutboxMailer.Core\src\Iquality.Shared.Data\Properties\AssemblyInfo.cs
+C:\Users\esheretov\Dropbox\JOB\Learning\aspnet5\GitHub\OutboxMailer.Core\src\Iquality.Shared.Data\Class1.cs
+C:\Users\esheretov\Dropbox\JOB\Learning\aspnet5\GitHub\OutboxMailer.Core\src\Iquality.Shared.Data\Models\MessagingContext.cs
+C:\Users\esheretov\Dropbox\JOB\Learning\aspnet5\GitHub\OutboxMailer.Core\src\Iquality.Shared.Data\Properties\AssemblyInfo.cs

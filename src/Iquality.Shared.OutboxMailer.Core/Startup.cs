@@ -25,6 +25,7 @@ namespace Iquality.Shared.OutboxMailer.Core
 
             builder.AddEnvironmentVariables();
             Configuration = builder.Build();
+
         }
 
         public IConfigurationRoot Configuration { get; }

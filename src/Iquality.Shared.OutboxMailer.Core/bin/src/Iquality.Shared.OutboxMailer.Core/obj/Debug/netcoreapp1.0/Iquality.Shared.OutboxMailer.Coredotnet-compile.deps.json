@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.0/",
-    "signature": "727cea5fea737f9085eaa610d311b2e13e8e5d36"
+    "signature": "2496b732f3e1254863e33b60521fd52714e2a37b"
   },
   "compilationOptions": {
     "defines": [
@@ -31,7 +31,8 @@
           "Microsoft.EntityFrameworkCore.Tools": "1.0.0-preview2-final",
           "Iquality.Shared.Data": "1.0.0",
           "Microsoft.EntityFrameworkCore.Sqlite": "1.0.0",
-          "Serilog.Extensions.Logging": "1.1.0"
+          "Serilog.Extensions.Logging": "1.1.0",
+          "Serilog.Sinks.RollingFile": "2.1.0"
         },
         "compile": {
           "Iquality.Shared.OutboxMailer.Core.dll": {}
@@ -1594,6 +1595,29 @@
           "lib/netstandard1.3/Serilog.Extensions.Logging.dll": {}
         }
       },
+      "Serilog.Sinks.File/2.0.0": {
+        "dependencies": {
+          "Serilog": "2.0.0",
+          "System.IO": "4.1.0",
+          "System.IO.FileSystem": "4.0.1",
+          "System.IO.FileSystem.Primitives": "4.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.3/Serilog.Sinks.File.dll": {}
+        }
+      },
+      "Serilog.Sinks.RollingFile/2.1.0": {
+        "dependencies": {
+          "Serilog": "2.0.0",
+          "Serilog.Sinks.File": "2.0.0",
+          "System.IO": "4.1.0",
+          "System.IO.FileSystem.Primitives": "4.0.1",
+          "System.Runtime.InteropServices": "4.1.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/Serilog.Sinks.RollingFile.dll": {}
+        }
+      },
       "SQLite/3.12.2": {
         "dependencies": {
           "SQLite.Native": "3.12.2"
@@ -2993,7 +3017,8 @@
           "Microsoft.EntityFrameworkCore.Tools": "1.0.0-preview2-final",
           "Iquality.Shared.Data": "1.0.0",
           "Microsoft.EntityFrameworkCore.Sqlite": "1.0.0",
-          "Serilog.Extensions.Logging": "1.1.0"
+          "Serilog.Extensions.Logging": "1.1.0",
+          "Serilog.Sinks.RollingFile": "2.1.0"
         },
         "runtime": {
           "Iquality.Shared.OutboxMailer.Core.dll": {}
@@ -4551,6 +4576,29 @@
         },
         "runtime": {
           "lib/netstandard1.3/Serilog.Extensions.Logging.dll": {}
+        }
+      },
+      "Serilog.Sinks.File/2.0.0": {
+        "dependencies": {
+          "Serilog": "2.0.0",
+          "System.IO": "4.1.0",
+          "System.IO.FileSystem": "4.0.1",
+          "System.IO.FileSystem.Primitives": "4.0.1"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Serilog.Sinks.File.dll": {}
+        }
+      },
+      "Serilog.Sinks.RollingFile/2.1.0": {
+        "dependencies": {
+          "Serilog": "2.0.0",
+          "Serilog.Sinks.File": "2.0.0",
+          "System.IO": "4.1.0",
+          "System.IO.FileSystem.Primitives": "4.0.1",
+          "System.Runtime.InteropServices": "4.1.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Serilog.Sinks.RollingFile.dll": {}
         }
       },
       "SQLite/3.12.2": {
@@ -6459,6 +6507,16 @@
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-6fvXcoX6qarOjItiJfkdGsFF1WvJbHpWuz+s7/HirtwYONSYd4xLOF/PCqKjnyT44AFAB9EedUaz74wvCf/xRw=="
+    },
+    "Serilog.Sinks.File/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-atGnXIHSM5Lg9E14mXc1Yf8CuKnNSaenW+ZPVCrM1O/+lXwl3BgZ6ZXvLE1n4XF71ZU1U9dx/Yg47ci90QbjrQ=="
+    },
+    "Serilog.Sinks.RollingFile/2.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bBCGuXxlLq2yho3QLdRzEsW2sp7zQKcrNb7gmyqLtNwE3K20MolNYWoWqEmZJGGBktPt8quFYQJCFXSPdpGkTQ=="
     },
     "SQLite/3.12.2": {
       "type": "package",

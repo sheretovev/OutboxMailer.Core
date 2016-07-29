@@ -15,7 +15,7 @@ namespace Iquality.Shared.OutboxMailer.Core.Models
             var dbDir = @"c:\temp\OuboxMailer\";
             if (!Directory.Exists(dbDir))
                 Directory.CreateDirectory(dbDir);
-            var dbPath = Path.Combine(dbDir, @"SQLiteData.db");
+            var dbPath = Path.Combine(dbDir, @"OutboxSQLiteData.db");
             optionsBuilder.UseSqlite("Data Source=" + dbPath);
         }
 

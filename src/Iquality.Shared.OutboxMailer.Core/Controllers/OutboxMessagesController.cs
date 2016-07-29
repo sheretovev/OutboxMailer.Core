@@ -14,6 +14,7 @@ namespace Iquality.Shared.OutboxMailer.Core.Controllers
         //}
         public OutboxMessagesController()
         {
+             _context.Init();
             //_context = context;
         }
 
@@ -21,10 +22,10 @@ namespace Iquality.Shared.OutboxMailer.Core.Controllers
         [HttpGet]
         public IEnumerable<OutboxMessage> Get()
         {
-            return new [] { new OutboxMessage { Body = "body", ToAddress = "to", FromAddress = "from", Subject = "title" } ,
-              new OutboxMessage { Body = "body", ToAddress = "to", FromAddress = "from", Subject = "title" }, 
-              new OutboxMessage { Body = "body", ToAddress = "to", FromAddress = "from", Subject = "title" } };
-            //return _context.Messages;
+            //return new [] { new OutboxMessage { Body = "body", ToAddress = "to", FromAddress = "from", Subject = "title" } ,
+            //  new OutboxMessage { Body = "body", ToAddress = "to", FromAddress = "from", Subject = "title" }, 
+            //  new OutboxMessage { Body = "body", ToAddress = "to", FromAddress = "from", Subject = "title" } };
+            return _context.Messages;
         }
 
         // GET api/values/5
@@ -42,25 +43,26 @@ namespace Iquality.Shared.OutboxMailer.Core.Controllers
         }
 
         // PUT api/ouboxmessages
-        //[HttpPut("{to}{from}{subject}")]
-        //public void Put(string to, string from, string subject, [FromBody]string body)
-        //{
-        //    _context.Messages.Add(new OutboxMessage
-        //    {
-        //        Body = body,
-        //        Subject = subject,
-        //        FromAddress = from,
-        //        ToAddress = to
-        //    }
-        //    );
-        //}
+       [HttpPut("{to}/{from}/{subject}")]
+        public void Put(string to, string from, string subject, [FromBody]string body)
+        {
+            _context.Messages.Add(new OutboxMessage
+            {
+                Body = body,
+                Subject = subject,
+                FromAddress = from,
+                ToAddress = to
+            }
+            );
+            _context.SaveChanges();
+        }
 
 
         // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
-        }
+        //[HttpPut("{id}")]
+        //public void Put(int id, [FromBody]string value)
+        //{
+        //}
 
 
         // DELETE api/values/5

@@ -17,11 +17,11 @@ namespace Iquality.Shared.OutboxMailer.Core.Migrations
 
             modelBuilder.Entity("Iquality.Shared.OutboxMailer.Core.Models.Attachment", b =>
                 {
-                    b.Property<int>("AttachmentId");
+                    b.Property<Guid>("AttachmentId");
 
                     b.Property<string>("Content");
 
-                    b.Property<int>("OutboxMessageId");
+                    b.Property<Guid>("OutboxMessageId");
 
                     b.Property<string>("Title");
 
@@ -34,7 +34,7 @@ namespace Iquality.Shared.OutboxMailer.Core.Migrations
 
             modelBuilder.Entity("Iquality.Shared.OutboxMailer.Core.Models.OutboxMessage", b =>
                 {
-                    b.Property<int>("OutboxMessageId");
+                    b.Property<Guid>("OutboxMessageId");
 
                     b.Property<string>("Body");
 

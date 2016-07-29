@@ -1,5 +1,5 @@
---temp-output:C:\users\esheretov\documents\visual studio 2015\Projects\Iquality.Shared.OutboxMailer.Core\src\Iquality.Shared.OutboxMailer.Core\bin\src\Iquality.Shared.OutboxMailer.Core\obj\Debug\netcoreapp1.0\
---out:C:\users\esheretov\documents\visual studio 2015\Projects\Iquality.Shared.OutboxMailer.Core\src\Iquality.Shared.OutboxMailer.Core\bin\src\Iquality.Shared.OutboxMailer.Core\bin\Debug\netcoreapp1.0\Iquality.Shared.OutboxMailer.Core.dll
+--temp-output:C:\Users\esheretov\Dropbox\JOB\Learning\aspnet5\GitHub\OutboxMailer.Core\src\Iquality.Shared.OutboxMailer.Core\bin\src\Iquality.Shared.OutboxMailer.Core\obj\Debug\netcoreapp1.0\
+--out:C:\Users\esheretov\Dropbox\JOB\Learning\aspnet5\GitHub\OutboxMailer.Core\src\Iquality.Shared.OutboxMailer.Core\bin\src\Iquality.Shared.OutboxMailer.Core\bin\Debug\netcoreapp1.0\Iquality.Shared.OutboxMailer.Core.dll
 --define:DEBUG
 --define:TRACE
 --define:NETCOREAPP1_0
@@ -118,6 +118,8 @@
 --reference:C:\Users\esheretov\.nuget\packages\Remotion.Linq\2.1.1\lib\netstandard1.0\Remotion.Linq.dll
 --reference:C:\Users\esheretov\.nuget\packages\Serilog\2.0.0\lib\netstandard1.3\Serilog.dll
 --reference:C:\Users\esheretov\.nuget\packages\Serilog.Extensions.Logging\1.1.0\lib\netstandard1.3\Serilog.Extensions.Logging.dll
+--reference:C:\Users\esheretov\.nuget\packages\Serilog.Sinks.File\2.0.0\lib\netstandard1.3\Serilog.Sinks.File.dll
+--reference:C:\Users\esheretov\.nuget\packages\Serilog.Sinks.RollingFile\2.1.0\lib\netstandard1.3\Serilog.Sinks.RollingFile.dll
 --reference:C:\Users\esheretov\.nuget\packages\System.AppContext\4.1.0\ref\netstandard1.6\System.AppContext.dll
 --reference:C:\Users\esheretov\.nuget\packages\System.Buffers\4.0.0\lib\netstandard1.1\System.Buffers.dll
 --reference:C:\Users\esheretov\.nuget\packages\System.Collections\4.0.11\ref\netstandard1.3\System.Collections.dll
@@ -204,13 +206,15 @@
 --reference:C:\Users\esheretov\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll
 --reference:C:\Users\esheretov\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\esheretov\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
---reference:C:\users\esheretov\documents\visual studio 2015\Projects\Iquality.Shared.OutboxMailer.Core\src\Iquality.Shared.OutboxMailer.Core\bin\src\Iquality.Shared.Data\bin\Debug\netcoreapp1.0\Iquality.Shared.Data.dll
---resource:"C:\users\esheretov\documents\visual studio 2015\Projects\Iquality.Shared.OutboxMailer.Core\src\Iquality.Shared.OutboxMailer.Core\bin\src\Iquality.Shared.OutboxMailer.Core\obj\Debug\netcoreapp1.0\Iquality.Shared.OutboxMailer.Coredotnet-compile.deps.json",Iquality.Shared.OutboxMailer.Core.deps.json
-C:\users\esheretov\documents\visual studio 2015\Projects\Iquality.Shared.OutboxMailer.Core\src\Iquality.Shared.OutboxMailer.Core\DependencyResolver.cs
-C:\users\esheretov\documents\visual studio 2015\Projects\Iquality.Shared.OutboxMailer.Core\src\Iquality.Shared.OutboxMailer.Core\Program.cs
-C:\users\esheretov\documents\visual studio 2015\Projects\Iquality.Shared.OutboxMailer.Core\src\Iquality.Shared.OutboxMailer.Core\Startup.cs
-C:\users\esheretov\documents\visual studio 2015\Projects\Iquality.Shared.OutboxMailer.Core\src\Iquality.Shared.OutboxMailer.Core\Controllers\OutboxMessagesController.cs
-C:\users\esheretov\documents\visual studio 2015\Projects\Iquality.Shared.OutboxMailer.Core\src\Iquality.Shared.OutboxMailer.Core\Controllers\ValuesController.cs
-C:\users\esheretov\documents\visual studio 2015\Projects\Iquality.Shared.OutboxMailer.Core\src\Iquality.Shared.OutboxMailer.Core\Models\Attachment.cs
-C:\users\esheretov\documents\visual studio 2015\Projects\Iquality.Shared.OutboxMailer.Core\src\Iquality.Shared.OutboxMailer.Core\Models\OutboxContext.cs
-C:\users\esheretov\documents\visual studio 2015\Projects\Iquality.Shared.OutboxMailer.Core\src\Iquality.Shared.OutboxMailer.Core\Models\OutboxMessage.cs
+--reference:C:\Users\esheretov\Dropbox\JOB\Learning\aspnet5\GitHub\OutboxMailer.Core\src\Iquality.Shared.OutboxMailer.Core\bin\src\Iquality.Shared.Data\bin\Debug\netcoreapp1.0\Iquality.Shared.Data.dll
+--resource:"C:\Users\esheretov\Dropbox\JOB\Learning\aspnet5\GitHub\OutboxMailer.Core\src\Iquality.Shared.OutboxMailer.Core\bin\src\Iquality.Shared.OutboxMailer.Core\obj\Debug\netcoreapp1.0\Iquality.Shared.OutboxMailer.Coredotnet-compile.deps.json",Iquality.Shared.OutboxMailer.Core.deps.json
+C:\Users\esheretov\Dropbox\JOB\Learning\aspnet5\GitHub\OutboxMailer.Core\src\Iquality.Shared.OutboxMailer.Core\DependencyResolver.cs
+C:\Users\esheretov\Dropbox\JOB\Learning\aspnet5\GitHub\OutboxMailer.Core\src\Iquality.Shared.OutboxMailer.Core\Program.cs
+C:\Users\esheretov\Dropbox\JOB\Learning\aspnet5\GitHub\OutboxMailer.Core\src\Iquality.Shared.OutboxMailer.Core\Startup.cs
+C:\Users\esheretov\Dropbox\JOB\Learning\aspnet5\GitHub\OutboxMailer.Core\src\Iquality.Shared.OutboxMailer.Core\Controllers\OutboxMessagesController.cs
+C:\Users\esheretov\Dropbox\JOB\Learning\aspnet5\GitHub\OutboxMailer.Core\src\Iquality.Shared.OutboxMailer.Core\Controllers\ValuesController.cs
+C:\Users\esheretov\Dropbox\JOB\Learning\aspnet5\GitHub\OutboxMailer.Core\src\Iquality.Shared.OutboxMailer.Core\Logging\SerilogConfigurator.cs
+C:\Users\esheretov\Dropbox\JOB\Learning\aspnet5\GitHub\OutboxMailer.Core\src\Iquality.Shared.OutboxMailer.Core\Logging\StandardLengthLevelName.cs
+C:\Users\esheretov\Dropbox\JOB\Learning\aspnet5\GitHub\OutboxMailer.Core\src\Iquality.Shared.OutboxMailer.Core\Models\Attachment.cs
+C:\Users\esheretov\Dropbox\JOB\Learning\aspnet5\GitHub\OutboxMailer.Core\src\Iquality.Shared.OutboxMailer.Core\Models\OutboxContext.cs
+C:\Users\esheretov\Dropbox\JOB\Learning\aspnet5\GitHub\OutboxMailer.Core\src\Iquality.Shared.OutboxMailer.Core\Models\OutboxMessage.cs

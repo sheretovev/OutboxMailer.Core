@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Iquality.Shared.OutboxMailer.Core.Models
@@ -6,7 +7,7 @@ namespace Iquality.Shared.OutboxMailer.Core.Models
     public class OutboxMessage
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int OutboxMessageId { get; set; }
+        public Guid OutboxMessageId { get; set; }
         public string FromAddress { get; set; }
         public string ToAddress { get; set; }
         public string Subject { get; set; }
