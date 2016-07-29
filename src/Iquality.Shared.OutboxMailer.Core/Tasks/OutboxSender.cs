@@ -41,7 +41,8 @@ namespace Iquality.Shared.OutboxMailer.Core.Tasks
 
         public static void Execute(string parameter, DateTime scheduledTime)
         {
-            var logger = DependencyResolver.Services.GetService<ILogger>();
+            var loggerFactory = DependencyResolver.Services.GetService<ILoggerFactory>();
+            var logger = loggerFactory.CreateLogger<ScheduledSender>();
             logger.LogError($"{parameter}\tscheduled: {scheduledTime.ToString("o")}");
         }
     }

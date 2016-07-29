@@ -33,7 +33,7 @@ namespace Iquality.Shared.OutboxMailer.Core.Mailer
 
                 using (var client = new SmtpClient())
                 {
-                    client.Connect("iprint", 25, SecureSocketOptions.None);
+                    client.Connect("iprint", 25, SecureSocketOptions.None); // move to the configs
                     client.Send(message);
                     client.Disconnect(true);
                     _logger.LogInformation($"Email was sent to user: {to}");

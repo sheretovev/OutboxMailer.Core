@@ -6,15 +6,14 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Serilog;
 using Iquality.Shared.OutboxMailer.Core.Logging;
+using Iquality.Shared.OutboxMailer.Core.Tasks;
 
 namespace Iquality.Shared.OutboxMailer.Core
 {
     public class Startup
     {
         public Startup(IHostingEnvironment env)
-        {
-            SerilogConfigurator.Configure(env);
-
+        {            
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
@@ -55,6 +54,9 @@ namespace Iquality.Shared.OutboxMailer.Core
 
             loggerFactory.AddSerilog();
 
+            SerilogConfigurator.Configure(env);
+            ScheduledSender.Startup();
+            
             app.UseApplicationInsightsRequestTelemetry();
 
             app.UseApplicationInsightsExceptionTelemetry();
