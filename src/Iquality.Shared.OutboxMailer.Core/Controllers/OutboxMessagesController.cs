@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Iquality.Shared.OutboxMailer.Core.Models;
 using System.Collections.Generic;
+using Iquality.Shared.OutboxMailer.Core.Mailer;
+using Microsoft.Extensions.Logging;
 
 namespace Iquality.Shared.OutboxMailer.Core.Controllers
 {
@@ -8,14 +10,12 @@ namespace Iquality.Shared.OutboxMailer.Core.Controllers
     public class OutboxMessagesController : Controller
     {
         private OutboxContext _context = new OutboxContext();
-        //public OutboxMessagesController(OutboxContext context)
-        //{
-        //    _context = context;
-        //}
-        public OutboxMessagesController()
+        private readonly ILogger _logger;
+
+        public OutboxMessagesController(ILoggerFactory loggerFactory)
         {
-             _context.Init();
-            //_context = context;
+            _logger = loggerFactory.CreateLogger<OutboxMessagesController>();
+            _context.Init();
         }
 
         // GET api/ouboxmessages
@@ -55,16 +55,10 @@ namespace Iquality.Shared.OutboxMailer.Core.Controllers
             }
             );
             _context.SaveChanges();
+
+            new SmtpEmailSender(_logger).Send(to, from, subject, body);
         }
-
-
-        // PUT api/values/5
-        //[HttpPut("{id}")]
-        //public void Put(int id, [FromBody]string value)
-        //{
-        //}
-
-
+        
         // DELETE api/values/5
         [HttpDelete("{id}")]
         public void Delete(int id)
