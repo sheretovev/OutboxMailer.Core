@@ -19,7 +19,8 @@
     "Iquality.Shared.Data": "1.0.0-*",
     "Microsoft.EntityFrameworkCore.Sqlite": "1.0.0",
     "Serilog.Extensions.Logging": "1.1.0",
-    "Serilog.Sinks.RollingFile": "2.1.0"
+    "Serilog.Sinks.RollingFile": "2.1.0",
+    "Swashbuckle": "6.0.0-beta901"    
   },
 
   "tools": {
