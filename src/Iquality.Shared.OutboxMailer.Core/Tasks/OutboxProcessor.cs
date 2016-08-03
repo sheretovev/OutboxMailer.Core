@@ -4,7 +4,6 @@ using System;
 using Chroniton;
 using Chroniton.Jobs;
 using Chroniton.Schedules;
-using System.Threading;
 using Iquality.Shared.OutboxMailer.Core.Extensions;
 using Iquality.Shared.OutboxMailer.Core.Models;
 using System.Linq;
@@ -36,12 +35,6 @@ namespace Iquality.Shared.OutboxMailer.Core.Tasks
                 schedule, job, settings, settings.StartTime);
             
             singularity.Start();
-
-            Thread.Sleep((settings.FinishTime - settings.StartTime));
-
-            singularity.StopScheduledJob(scheduledJob);
-            logger.LogInformation($"Scheduled Task is started. Settings: {settings.ToLog()}");
-            singularity.Stop();
         }
 
         public static void Execute(OutboxProcessorSettings parameter, DateTime scheduledTime)

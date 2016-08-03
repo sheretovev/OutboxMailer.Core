@@ -21,10 +21,7 @@ namespace Iquality.Shared.OutboxMailer.Core.Controllers
         // GET api/ouboxmessages
         [HttpGet]
         public IEnumerable<OutboxMessage> Get()
-        {
-            //return new [] { new OutboxMessage { Body = "body", ToAddress = "to", FromAddress = "from", Subject = "title" } ,
-            //  new OutboxMessage { Body = "body", ToAddress = "to", FromAddress = "from", Subject = "title" }, 
-            //  new OutboxMessage { Body = "body", ToAddress = "to", FromAddress = "from", Subject = "title" } };
+        {            
             return OutboxContext.RunInDb(context => context.Set<OutboxMessage>().ToList());
         }
 
