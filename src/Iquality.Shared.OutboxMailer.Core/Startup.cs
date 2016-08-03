@@ -7,13 +7,17 @@ using Microsoft.Extensions.Logging;
 using Serilog;
 using Iquality.Shared.OutboxMailer.Core.Logging;
 using Iquality.Shared.OutboxMailer.Core.Tasks;
+using System.Linq;
+using Iquality.Shared.OutboxMailer.Core.Models;
 
 namespace Iquality.Shared.OutboxMailer.Core
 {
     public class Startup
     {
         public Startup(IHostingEnvironment env)
-        {            
+        {
+            SerilogConfigurator.Configure(env);
+
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
@@ -27,7 +31,8 @@ namespace Iquality.Shared.OutboxMailer.Core
 
             builder.AddEnvironmentVariables();
             Configuration = builder.Build();
-
+            // Init DB (apply migrations)
+            using (var outboxContext = new OutboxContext()) { outboxContext.Init(); }
         }
 
         public IConfigurationRoot Configuration { get; }
@@ -54,8 +59,13 @@ namespace Iquality.Shared.OutboxMailer.Core
 
             loggerFactory.AddSerilog();
 
-            SerilogConfigurator.Configure(env);
-            ScheduledSender.Startup();
+            OutboxProcessor.Startup(new OutboxProcessorSettings
+            {
+                ItemsPerShot = 10,
+                StartTime = DateTime.UtcNow.AddSeconds(10),
+                FinishTime = DateTime.UtcNow.AddMinutes(2),
+                Frequency = TimeSpan.FromMinutes(1)
+            });
             
             app.UseApplicationInsightsRequestTelemetry();
 

@@ -12,6 +12,9 @@ namespace Iquality.Shared.OutboxMailer.Core.Models
         public string ToAddress { get; set; }
         public string Subject { get; set; }
         public string Body { get; set; }
+        public ProcessStatus Status { get; set; }
+        public DateTime ProcessedDate { get; set; }
+        public DateTime CreatedDate { get; set; }
 
         public List<Attachment> Attachments { get; set; }
     }

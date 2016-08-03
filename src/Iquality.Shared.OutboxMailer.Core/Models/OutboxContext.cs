@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.IO;
+using System.Linq;
 
 namespace Iquality.Shared.OutboxMailer.Core.Models
 {
@@ -40,7 +41,7 @@ namespace Iquality.Shared.OutboxMailer.Core.Models
             }
             catch (Exception ex)
             {
-                var logger = DependencyResolver.Services.GetService<ILogger>();
+                var logger = DependencyResolver.Services.GetService<ILoggerFactory>().CreateLogger<OutboxContext>();
                 logger.LogError("DB Error", ex);
             }
             return result;
@@ -58,7 +59,7 @@ namespace Iquality.Shared.OutboxMailer.Core.Models
             }
             catch (Exception ex)
             {
-                var logger = DependencyResolver.Services.GetService<ILogger>();
+                var logger = DependencyResolver.Services.GetService<ILoggerFactory>().CreateLogger<OutboxContext>();
                 logger.LogError("DB Error", ex);
             }
         }

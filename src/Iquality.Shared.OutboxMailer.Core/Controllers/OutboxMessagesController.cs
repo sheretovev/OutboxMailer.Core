@@ -3,19 +3,19 @@ using Iquality.Shared.OutboxMailer.Core.Models;
 using System.Collections.Generic;
 using Iquality.Shared.OutboxMailer.Core.Mailer;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Linq;
 
 namespace Iquality.Shared.OutboxMailer.Core.Controllers
 {
     [Route("api/[controller]")]
     public class OutboxMessagesController : Controller
-    {
-        private OutboxContext _context = new OutboxContext();
+    {        
         private readonly ILogger _logger;
 
         public OutboxMessagesController(ILoggerFactory loggerFactory)
         {
-            _logger = loggerFactory.CreateLogger<OutboxMessagesController>();
-            _context.Init();
+            _logger = loggerFactory.CreateLogger<OutboxMessagesController>();            
         }
 
         // GET api/ouboxmessages
@@ -25,7 +25,7 @@ namespace Iquality.Shared.OutboxMailer.Core.Controllers
             //return new [] { new OutboxMessage { Body = "body", ToAddress = "to", FromAddress = "from", Subject = "title" } ,
             //  new OutboxMessage { Body = "body", ToAddress = "to", FromAddress = "from", Subject = "title" }, 
             //  new OutboxMessage { Body = "body", ToAddress = "to", FromAddress = "from", Subject = "title" } };
-            return _context.Messages;
+            return OutboxContext.RunInDb(context => context.Set<OutboxMessage>().ToList());
         }
 
         // GET api/values/5
@@ -46,17 +46,14 @@ namespace Iquality.Shared.OutboxMailer.Core.Controllers
        [HttpPut("{to}/{from}/{subject}")]
         public void Put(string to, string from, string subject, [FromBody]string body)
         {
-            _context.Messages.Add(new OutboxMessage
+            OutboxContext.RunInDb(context => context.Set<OutboxMessage>().Add(new OutboxMessage
             {
                 Body = body,
                 Subject = subject,
                 FromAddress = from,
-                ToAddress = to
-            }
-            );
-            _context.SaveChanges();
-
-            new SmtpEmailSender(_logger).Send(to, from, subject, body);
+                ToAddress = to,
+                CreatedDate = DateTime.UtcNow
+            }));                       
         }
         
         // DELETE api/values/5
