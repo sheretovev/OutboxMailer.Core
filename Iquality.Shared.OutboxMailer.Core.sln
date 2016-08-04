@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		global.json = global.json
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Iquality.Shared.OutboxSender.Core", "src\Iquality.Shared.OutboxSender.Core\Iquality.Shared.OutboxSender.Core.xproj", "{B4357F16-1829-42DC-AB56-5623E7F46DCB}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Iquality.Shared.OutboxMailer.Core", "src\Iquality.Shared.OutboxMailer.Core\Iquality.Shared.OutboxMailer.Core.xproj", "{B4357F16-1829-42DC-AB56-5623E7F46DCB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
