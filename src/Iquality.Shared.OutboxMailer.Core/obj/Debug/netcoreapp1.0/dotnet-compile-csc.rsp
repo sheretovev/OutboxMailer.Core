@@ -230,6 +230,8 @@
 "C:\Users\esheretov\Dropbox\JOB\Learning\aspnet5\GitHub\OutboxMailer.Core\src\Iquality.Shared.OutboxMailer.Core\Migrations\20160729094351_OutboxContextMigration.Designer.cs"
 "C:\Users\esheretov\Dropbox\JOB\Learning\aspnet5\GitHub\OutboxMailer.Core\src\Iquality.Shared.OutboxMailer.Core\Migrations\20160803124741_OutboxContextProcessing.cs"
 "C:\Users\esheretov\Dropbox\JOB\Learning\aspnet5\GitHub\OutboxMailer.Core\src\Iquality.Shared.OutboxMailer.Core\Migrations\20160803124741_OutboxContextProcessing.Designer.cs"
+"C:\Users\esheretov\Dropbox\JOB\Learning\aspnet5\GitHub\OutboxMailer.Core\src\Iquality.Shared.OutboxMailer.Core\Migrations\20160804070011_OutboxContextBcc.cs"
+"C:\Users\esheretov\Dropbox\JOB\Learning\aspnet5\GitHub\OutboxMailer.Core\src\Iquality.Shared.OutboxMailer.Core\Migrations\20160804070011_OutboxContextBcc.Designer.cs"
 "C:\Users\esheretov\Dropbox\JOB\Learning\aspnet5\GitHub\OutboxMailer.Core\src\Iquality.Shared.OutboxMailer.Core\Migrations\OutboxContextModelSnapshot.cs"
 "C:\Users\esheretov\Dropbox\JOB\Learning\aspnet5\GitHub\OutboxMailer.Core\src\Iquality.Shared.OutboxMailer.Core\Models\Attachment.cs"
 "C:\Users\esheretov\Dropbox\JOB\Learning\aspnet5\GitHub\OutboxMailer.Core\src\Iquality.Shared.OutboxMailer.Core\Models\OutboxContext.cs"

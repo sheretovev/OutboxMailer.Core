@@ -49,7 +49,7 @@ namespace Iquality.Shared.OutboxMailer.Core.Tasks
                 try
                 {
                     OutboxContext.RunInDb(context => AssignStatus(context, message.OutboxMessageId, ProcessStatus.Busy));
-                    sender.Send(message.ToAddress, message.FromAddress, message.Subject, message.Body);
+                    sender.Send(message);
                     OutboxContext.RunInDb(context => AssignStatus(context, message.OutboxMessageId, ProcessStatus.Sent));
                 }
                 catch (Exception ex)

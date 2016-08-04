@@ -36,7 +36,11 @@ namespace Iquality.Shared.OutboxMailer.Core.Migrations
                 {
                     b.Property<Guid>("OutboxMessageId");
 
+                    b.Property<string>("BccAddress");
+
                     b.Property<string>("Body");
+
+                    b.Property<string>("CcAddress");
 
                     b.Property<DateTime>("CreatedDate");
 

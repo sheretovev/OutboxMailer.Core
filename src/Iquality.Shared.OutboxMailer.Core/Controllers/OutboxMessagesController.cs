@@ -40,17 +40,12 @@ namespace Iquality.Shared.OutboxMailer.Core.Controllers
         }
 
         // PUT api/ouboxmessages
-       [HttpPut("{to}/{from}/{subject}")]
-        public void Put(string to, string from, string subject, [FromBody]string body)
+       [HttpPut("")]
+        public void Put([FromBody]OutboxMessage body)
         {
-            OutboxContext.RunInDb(context => context.Set<OutboxMessage>().Add(new OutboxMessage
-            {
-                Body = body,
-                Subject = subject,
-                FromAddress = from,
-                ToAddress = to,
-                CreatedDate = DateTime.UtcNow
-            }));                       
+            if (body == null) throw new ArgumentNullException($"{nameof(OutboxMessage)} was not provided from a body. Please use JSON format to provide valid object.");
+            body.CreatedDate = DateTime.UtcNow;
+            OutboxContext.RunInDb(context => context.Set<OutboxMessage>().Add(body));                       
         }
         
         // DELETE api/values/5
