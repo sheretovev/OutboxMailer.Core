@@ -28,7 +28,8 @@ namespace Iquality.Shared.OutboxMailer.Core.Mailer
             try
             {
                 var message = new MimeMessage();
-                message.From.Add(new MailboxAddress(from?.Substring(0, to.IndexOf("@", StringComparison.Ordinal)), from));
+                // todo: extend message with names
+                message.From.Add(new MailboxAddress(from?.Substring(0, from.IndexOf("@", StringComparison.Ordinal)), from));
                 message.To.Add(new MailboxAddress(to?.Substring(0, to.IndexOf("@", StringComparison.Ordinal)), to));
                 message.Cc.Add(new MailboxAddress(cc?.Substring(0, cc.IndexOf("@", StringComparison.Ordinal)), cc));
                 message.Bcc.Add(new MailboxAddress(bcc?.Substring(0, bcc.IndexOf("@", StringComparison.Ordinal)), bcc));
