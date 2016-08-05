@@ -45,6 +45,7 @@ namespace Iquality.Shared.OutboxMailer.Core.Controllers
         {
             if (body == null) throw new ArgumentNullException($"{nameof(OutboxMessage)} was not provided from a body. Please use JSON format to provide valid object.");
             body.CreatedDate = DateTime.UtcNow;
+            var a = body.Attachments.Select(x => x.Content);
             OutboxContext.RunInDb(context => context.Set<OutboxMessage>().Add(body));                       
         }
         

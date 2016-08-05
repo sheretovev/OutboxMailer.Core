@@ -22,8 +22,8 @@
     "Swashbuckle": "6.0.0-beta901",
     "MailKit": "1.4.1",
     "System.Threading": "4.0.11",
-    "System.Threading.Tasks": "4.0.11",    
-    "Chroniton.NetCore": "1.0.3"
+    "System.Threading.Tasks": "4.0.11",
+    "Chroniton.NetCore": "1.0.3"    
   },
 
   "tools": {
