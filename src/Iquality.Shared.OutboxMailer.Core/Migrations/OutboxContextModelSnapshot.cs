@@ -45,7 +45,7 @@ namespace Iquality.Shared.OutboxMailer.Core.Migrations
                     b.Property<DateTime>("CreatedDate");
 
                     b.Property<string>("FromAddress");
-
+                    
                     b.Property<DateTime>("ProcessedDate");
 
                     b.Property<int>("Status");

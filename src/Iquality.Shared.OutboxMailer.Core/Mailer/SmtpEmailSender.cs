@@ -29,10 +29,11 @@ namespace Iquality.Shared.OutboxMailer.Core.Mailer
             {
                 var message = new MimeMessage();
                 // todo: extend message with names
-                message.From.Add(new MailboxAddress(from?.Substring(0, from.IndexOf("@", StringComparison.Ordinal)), from));
-                message.To.Add(new MailboxAddress(to?.Substring(0, to.IndexOf("@", StringComparison.Ordinal)), to));
-                message.Cc.Add(new MailboxAddress(cc?.Substring(0, cc.IndexOf("@", StringComparison.Ordinal)), cc));
-                message.Bcc.Add(new MailboxAddress(bcc?.Substring(0, bcc.IndexOf("@", StringComparison.Ordinal)), bcc));
+                if (!string.IsNullOrWhiteSpace(from)) message.From.Add(new MailboxAddress(null, from));
+                if (!string.IsNullOrWhiteSpace(to)) message.To.Add(new MailboxAddress(null, to));
+                if (!string.IsNullOrWhiteSpace(cc)) message.Cc.Add(new MailboxAddress(null, cc));
+                if (!string.IsNullOrWhiteSpace(bcc)) message.Bcc.Add(new MailboxAddress(null, bcc));
+
                 message.Subject = subject;
                 message.Body = new BodyBuilder
                 {
